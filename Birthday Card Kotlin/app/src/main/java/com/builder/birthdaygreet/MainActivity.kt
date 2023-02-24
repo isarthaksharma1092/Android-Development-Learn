@@ -1,5 +1,6 @@
 package com.builder.birthdaygreet
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
@@ -29,7 +30,10 @@ class MainActivity : AppCompatActivity() {
 
 //        example 2
         val name = nameInput.editableText.toString()
-        Toast.makeText(this,"Greeting for $name is being generated. ",Toast.LENGTH_LONG).show()
+//        Toast.makeText(this,"Greeting for $name is being generated. ",Toast.LENGTH_LONG).show()
 
+        val intent = Intent(this,BirthdayGreetingActivity::class.java)
+        intent.putExtra(BirthdayGreetingActivity.Name_extra,name)
+        startActivity(intent)
     }
 }
